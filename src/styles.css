@@ -1,90 +1,163 @@
+@font-face {
+  font-family: skinnyArial;
+  src: url("../Files/Garet-Book.woff2");
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: skinnyArial,Arial, Helvetica, sans-serif;
 }
 
-body {
-  color: #5d6063;
-  background-color: #eaedf0;
-  font-family: "Helvetica", "Arial", sans-serif;
-  font-size: 16px;
-  line-height: 1.3;
 
+.everythingDiv{
+  background-image: linear-gradient(to bottom,rgba(1, 53, 12, 0.996),rgb(1, 122, 33));
+  color: whitesmoke;
+  padding: 1.7rem 1.5rem;
+
+
+}
+.mainHeaderDiv{
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+}
+.mainHeaderLocationDiv{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 550;
+}
+.mainHeaderDiv{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 0;
+  font-size: 0.77rem;
+}
+.searchDiv label{
+  margin-right: 4px;
+}
+.searchStuffDiv{
+  display: flex;
   align-items: center;
 }
-
-.speaker-form-header {
-  text-align: center;
-  background-color: #f6f7f8;
-  border: 1px solid #d6d9dc;
-  border-radius: 3px;
-
-  width: 80%;
-  margin: 40px 0;
-  padding: 50px;
+input{
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1px 4px ;
+  background-color: rgba(0, 0, 0, 0.2);
+  font-size: 0.77rem;
+  color: whitesmoke;
 }
-
-.speaker-form-header h1 {
-  font-size: 30px;
-  margin-bottom: 20px;
+input:focus{
+  background-color: rgba(0, 0, 0, 0.4);
 }
-.speaker-form {
-  background-color: #f6f7f8;
-  border: 1px solid #d6d9dc;
-  border-radius: 3px;
-
-  width: 80%;
-  padding: 50px;
-  margin: 0 0 40px 0;
+button{
+  outline: none;
+  border: none;
+  padding: 1px 3px;
+  border-radius: 0.2rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: whitesmoke;
 }
-.form-row {
-  margin-bottom: 40px;
+button:active{
+  background-color: rgba(255, 255, 255, 0.03);
+}
+.searchErrorDiv{
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
+  color: rgba(255, 255, 255, alpha);
+  
+}
+.mainStatsDiv{
+  display: flex;
+  justify-content: space-around;
+}
+.mainStatsLeftDiv{
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 0.5rem;
+
+}
+
+.mainStatsLeftDiv img{
+  width: 9rem
+}
+.mainStatsLeftRightDiv{
+  margin-bottom: clamp(0.3rem,10%,0.8rem);
+}
+.mainStatsLeftRightTemperature{
+  font-size: 4.5rem;
+}
+.mainStatsLeftRightMessage{
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: center;
+}
+.mainStatsRightDiv{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  flex: 2;
+  margin-left: clamp(2rem,5%,3rem);
+}
+.mainStatsRightDiv > * > :nth-child(2){
+  color: rgba(255, 255, 255, 0.6);
+}
+.mainStatsRightDiv > * > :nth-child(1){
+  font-size: 1.2rem;
+}
+.timesDiv{
+  display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.timesHeaderDiv{
+  font-weight: bold;
+  letter-spacing: 0.2px;
+
+}
+.timesIconsDiv{
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-auto-flow: column;
+  grid-auto-columns: auto;
+  justify-content: space-between;
+}
+.timesIconsDiv >*{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 0.2rem;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 1.3rem;
+}
+.timesIconsDiv >* >*{
+  align-self: center;
+}
+.timesIconsDiv img{
+  width: 2.5rem;
+}
+.weeklyIconsDiv{
+  display: grid;
+  grid-auto-rows: 1fr;
+  gap: 2rem;
+}
+.weeklyIconsDiv>*{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.15);
+  padding: 0.4rem 1rem;
+  border-radius: 0.2rem;
+}
+.weeklyIconsDiv>*>*{
+  flex: 1;
 }
 
-.form-row input[type="text"],
-input[type="email"] {
-  background-color: #ffffff;
-  border: 1px solid #d6d9dc;
-  border-radius: 3px;
-  width: 100%;
-  padding: 7px;
-  font-size: 14px;
-}
 
-@media only screen and (min-width: 700px) {
-  .speaker-form-header,
-  .speaker-form {
-    width: 600px;
-  }
-  .form-row {
-    flex-direction: row;
-    align-items: flex-start; /* To avoid stretching */
-    margin-bottom: 20px;
-  }
-  .form-row input[type="text"],
-  .form-row input[type="email"],
-  .form-row select,
-  .form-row textarea {
-    width: 250px;
-    height: initial;
-  }
-  .form-row label {
-    text-align: right;
-    width: 120px;
-    margin-top: 7px;
-    padding-right: 20px;
-  }
-}
-.form-row input[type="text"]:invalid,
-.form-row input[type="email"]:invalid {
-  border: 1px solid #d55c5f;
-  color: #d55c5f;
-  box-shadow: none; /* Remove default red glow in Firefox */
+.weeklyIconsDiv>*>*>:nth-child(2){
+  font-size: 0.77rem;
+  color: rgba(255,255 , 255, 0.6);
 }

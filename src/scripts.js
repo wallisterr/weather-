@@ -1,6 +1,8 @@
 import _ from 'lodash'
 import './styles.css'
-let date = _.now()
-let brain = 'shake shake shake'
-
-console.log(date)
+let fetchedData = fetch("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/London,UK?unitGroup=us")
+fetchedData.then(response=>{
+    return response.json()
+}).then(response=>{
+    console.log(response)
+})
